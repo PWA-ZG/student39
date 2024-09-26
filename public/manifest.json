@@ -1,0 +1,23 @@
+{
+    "name": "PWA-Cookbook-01",
+    "short_name": "CookBook",
+    "description": "Demo aplikacija na predmetu Napredni razvoj za web",
+    "display": "fullscreen",
+    "theme_color": "red",
+    "background_color": "#DDD",
+    "start_url": "/index.html",
+    "scope": ".",
+    "orientation": "portrait-primary",
+    "dir": "ltr",
+    "lang": "en-US",
+    "icons": [
+      {
+        "src": "assets/img/windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "assets/img/android/android-launchericon-512-512.png",
+        "sizes": "512x512"
+      }
+    ]
+  }

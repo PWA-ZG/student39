@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Thoughts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./assets/site.css">
+  <link rel="manifest" href="./manifest.json">
+
+</head>
+
+<body>
+
+  <h1>Share a Thought!</h1>
+  <p>This is a place where you can record your thoughts. Control the recording with start/stop buttons 
+     and then give it a name and use the upload button to share it with others.
+     <br>Press on Hear all thoughts! to see your newly published thought and hear what others are thinking.
+     <br>You can use the bell icon to enable notifications so you never miss on any new thoughts!
+  </p>
+
+  <div>
+    <a href="/thoughts">Hear all thoughts!</a>
+  </div>
+
+  <div class="text-end">
+    <p>Enable notifications
+      <button id="btnEnableNotifications" class="btn btn-outline-success">
+          <i class="bi bi-bell"></i>
+      </button>
+    </p>
+  </div>
+
+  <script>
+    navigator.serviceWorker.register('./sw.js', {type: 'module'})
+      .then(reg => console.log('SW registered!', reg))
+      .catch(err => console.error('Error registering service worker', err));
+  </script>
+
+  <div>
+    <div>
+      <h2>Record a new thought</h2>
+    </div>
+    <button type="button" id="buttonStart">Start</button>
+    <button type="button" id="buttonStop" disabled>Stop</button>
+  </div>
+  <div>
+    <audio controls id="audio"></audio>
+  </div>
+
+  <div>
+    <input id="audioName" type="text" placeholder="I'm thinking about..." />
+    <button id="btnUpload" disabled="true">Upload</button>
+  </div>
+
+  <div>
+    
+  </div>
+
+
+  <script src="encode-audio.js"></script>
+  <script src="main.js" type="module"></script>
+  <script src="push.js"></script>
+
+</body>
+</html>
